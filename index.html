@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Life Canoas · Agropecuária, Pet Shop e Banho e Tosa</title>
+    <meta name="description" content="Pet Life Canoas: rações, antipulgas, acessórios, produtos agro e banho e tosa com agendamento online. Duas lojas em Canoas/RS. Peça pelo WhatsApp." />
+    <meta name="theme-color" content="#2AA3AD" />
+
+    <!-- Prévia do link no WhatsApp / redes sociais (trocar o endereço quando publicar) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pet Life Canoas · Agropecuária e Pet Shop" />
+    <meta property="og:description" content="Rações, antipulgas, acessórios e banho e tosa com agendamento online. Monte sua sacolinha e peça pelo WhatsApp." />
+    <meta property="og:image" content="https://fabricior13.github.io/petlife-canoas/assets/previa-link.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://fabricior13.github.io/petlife-canoas/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <span><i class="fa-solid fa-truck-fast" aria-hidden="true"></i> <span id="aviso-topo"></span></span>
+            <span class="topbar-dir">
+                <span><i class="fa-regular fa-clock" aria-hidden="true"></i> <span id="horario-topo"></span></span>
+                <a id="whats-topo" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> <span id="telefone-topo"></span></a>
+            </span>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#loja" class="marca" aria-label="Pet Life — início">
+                <img src="assets/logo.png" alt="Pet Life" width="54" height="54">
+                <span class="marca-texto">
+                    <strong><span class="pet">Pet</span> <span class="life">Life</span></strong>
+                    <small>Agropecuária & Pet Shop · Canoas</small>
+                </span>
+            </a>
+            <label class="busca" role="search">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input id="busca" type="search" placeholder="Buscar ração, antipulgas, areia..." aria-label="Buscar produto" autocomplete="off">
+            </label>
+            <button class="btn-sacola" id="abrir-sacola" type="button" aria-label="Abrir sacolinha">
+                <span class="btn-sacola-ico"><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i><span class="badge" id="badge">0</span></span>
+                <span class="btn-sacola-txt"><small>Sacolinha</small><strong id="total-header">R$ 0,00</strong></span>
+            </button>
+        </div>
+        <nav class="abas container" aria-label="Seções">
+            <a href="#loja" class="aba" data-aba="loja"><i class="fa-solid fa-store" aria-hidden="true"></i> Loja</a>
+            <a href="#banho-e-tosa" class="aba" data-aba="banho"><i class="fa-solid fa-shower" aria-hidden="true"></i> Banho e Tosa <span class="aba-novo">agende</span></a>
+        </nav>
+    </header>
+
+    <!-- ═════════════════════════════ LOJA ═════════════════════════════ -->
+    <main id="view-loja">
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-texto">
+                    <span class="selo-hero"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 2 lojas em Canoas</span>
+                    <h1>Tudo para o seu pet e para a <span class="destaque-amarelo">sua criação</span></h1>
+                    <p>Rações, antipulgas, acessórios, produtos agro e banho e tosa. Monte sua sacolinha, escolha tele-entrega ou retirada e finalize pelo WhatsApp.</p>
+                    <div class="hero-botoes">
+                        <a href="#produtos" class="btn btn-teal"><i class="fa-solid fa-paw" aria-hidden="true"></i> Ver produtos</a>
+                        <a href="#banho-e-tosa" class="btn btn-amarelo"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Agendar banho e tosa</a>
+                    </div>
+                    <ul class="hero-selos">
+                        <li><i class="fa-solid fa-truck" aria-hidden="true"></i> Tele-entrega rápida</li>
+                        <li><i class="fa-solid fa-store" aria-hidden="true"></i> Retire na loja</li>
+                        <li><i class="fa-brands fa-pix" aria-hidden="true"></i> PIX, cartão ou dinheiro</li>
+                    </ul>
+                </div>
+                <div class="hero-arte" aria-hidden="true">
+                    <div class="hero-circulo"><img src="assets/logo.png" alt=""></div>
+                    <img class="hero-prod p1" src="assets/produtos/bolly-premium.webp" alt="">
+                    <img class="hero-prod p2" src="assets/produtos/monello.webp" alt="">
+                    <img class="hero-prod p3" src="assets/produtos/primocao.webp" alt="">
+                    <span class="patinha pa1"><i class="fa-solid fa-paw"></i></span>
+                    <span class="patinha pa2"><i class="fa-solid fa-paw"></i></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campanha (Esquenta Black Friday) -->
+        <section class="secao campanha" id="ofertas">
+            <div class="container">
+                <div class="campanha-card">
+                    <img class="campanha-banner" src="assets/esquenta-bf.webp" alt="Esquenta Black Friday Pet Life de 06/11 a 30/11">
+                    <div class="campanha-conteudo">
+                        <span class="campanha-tag"><i class="fa-solid fa-fire" aria-hidden="true"></i> Esquenta Black Friday · 06/11 a 30/11</span>
+                        <h2>Ofertas imperdíveis</h2>
+                        <p>Preços especiais por tempo limitado. Enquanto durarem os estoques!</p>
+                        <div class="carrossel" id="carrossel-ofertas"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao" id="categorias">
+            <div class="container">
+                <h2 class="titulo-secao">Compre por categoria</h2>
+                <div class="cat-grid" id="cat-grid"></div>
+            </div>
+        </section>
+
+        <section class="secao" id="produtos">
+            <div class="container">
+                <div class="secao-topo">
+                    <div>
+                        <h2 class="titulo-secao" id="titulo-lista">Todos os produtos</h2>
+                        <p class="secao-sub" id="contador"></p>
+                    </div>
+                    <label class="ordenar"><span>Ordenar</span>
+                        <select id="ordenar">
+                            <option value="destaque">Destaques</option>
+                            <option value="ofertas">Ofertas primeiro</option>
+                            <option value="menor">Menor preço</option>
+                            <option value="maior">Maior preço</option>
+                            <option value="nome">Nome (A-Z)</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="chips" id="chips-cat"></div>
+                <div class="grid-produtos" id="grid-produtos"></div>
+                <div class="vazio" id="vazio" hidden>
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    <p>Não achamos esse produto por aqui.</p>
+                    <a class="btn btn-teal" id="perguntar-whats" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Perguntar no WhatsApp</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao">
+            <div class="container">
+                <a class="faixa-banho" href="#banho-e-tosa">
+                    <span class="faixa-ico"><i class="fa-solid fa-shower" aria-hidden="true"></i></span>
+                    <span><strong>Seu pet cheiroso e bem cuidado</strong><small>Agende o banho e tosa online e escolha o melhor horário</small></span>
+                    <span class="btn btn-amarelo">Agendar <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ═════════════════════════ BANHO E TOSA ═════════════════════════ -->
+    <main id="view-banho" hidden>
+        <section class="hero hero-banho">
+            <div class="container hero-inner">
+                <div class="hero-texto">
+                    <span class="selo-hero"><i class="fa-solid fa-star" aria-hidden="true"></i> Banho e Tosa Pet Life</span>
+                    <h1>Agende o banho do seu pet <span class="destaque-amarelo">em 1 minuto</span></h1>
+                    <p>Escolha o serviço, a loja, o dia e o horário livre. A gente confirma pelo WhatsApp.</p>
+                    <ol class="passos">
+                        <li><span>1</span> Conte sobre o pet</li>
+                        <li><span>2</span> Escolha o serviço</li>
+                        <li><span>3</span> Dia e horário</li>
+                        <li><span>4</span> Confirmação no WhatsApp</li>
+                    </ol>
+                </div>
+                <div class="hero-arte hero-arte-banho" aria-hidden="true">
+                    <div class="bolhas"><span></span><span></span><span></span><span></span><span></span></div>
+                    <div class="hero-circulo"><img src="assets/logo.png" alt=""></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao">
+            <div class="container">
+                <h2 class="titulo-secao">Serviços e valores</h2>
+                <p class="secao-sub">Valor conforme o porte do pet. Adicionais podem ser escolhidos no agendamento.</p>
+                <div class="tabela-precos" id="tabela-precos"></div>
+            </div>
+        </section>
+
+        <section class="secao" id="agendar">
+            <div class="container">
+                <form class="agendar" id="form-agendar" novalidate>
+                    <div class="agendar-corpo">
+                        <fieldset class="etapa">
+                            <legend><span class="n">1</span> Sobre o pet</legend>
+                            <div class="linha-2">
+                                <label class="campo">Nome do pet<input id="ag-pet" required placeholder="Ex.: Thor" autocomplete="off"></label>
+                                <label class="campo">Raça <small>(opcional)</small><input id="ag-raca" placeholder="Ex.: Shih-tzu"></label>
+                            </div>
+                            <p class="rotulo">É cão ou gato?</p>
+                            <div class="opcoes" id="ag-especie">
+                                <button type="button" class="opcao ativo" data-v="Cão"><i class="fa-solid fa-dog"></i> Cão</button>
+                                <button type="button" class="opcao" data-v="Gato"><i class="fa-solid fa-cat"></i> Gato</button>
+                            </div>
+                            <p class="rotulo">Porte</p>
+                            <div class="opcoes opcoes-porte" id="ag-porte"></div>
+                        </fieldset>
+
+                        <fieldset class="etapa">
+                            <legend><span class="n">2</span> Serviço</legend>
+                            <div class="servicos" id="ag-servicos"></div>
+                            <p class="rotulo">Adicionais <small>(opcional)</small></p>
+                            <div class="adicionais" id="ag-adicionais"></div>
+                        </fieldset>
+
+                        <fieldset class="etapa">
+                            <legend><span class="n">3</span> Loja, dia e horário</legend>
+                            <div class="opcoes" id="ag-loja"></div>
+                            <p class="rotulo">Dia</p>
+                            <div class="dias" id="ag-dias"></div>
+                            <p class="rotulo">Horário <small id="ag-dia-txt"></small></p>
+                            <div class="horarios" id="ag-horarios"></div>
+                        </fieldset>
+
+                        <fieldset class="etapa">
+                            <legend><span class="n">4</span> Seus dados</legend>
+                            <div class="linha-2">
+                                <label class="campo">Seu nome<input id="ag-tutor" required autocomplete="name" placeholder="Nome do tutor"></label>
+                                <label class="campo">WhatsApp<input id="ag-fone" required inputmode="tel" autocomplete="tel" placeholder="(51) 99999-9999"></label>
+                            </div>
+                            <label class="campo">Observações <small>(opcional)</small><textarea id="ag-obs" rows="2" placeholder="Ex.: tem medo do secador, pele sensível..."></textarea></label>
+                        </fieldset>
+                    </div>
+
+                    <aside class="agendar-resumo">
+                        <h3><i class="fa-solid fa-receipt" aria-hidden="true"></i> Resumo</h3>
+                        <div id="ag-resumo"></div>
+                        <p class="erro" id="ag-erro" hidden></p>
+                        <button class="btn btn-whats btn-bloco" type="submit"><i class="fa-brands fa-whatsapp"></i> Agendar pelo WhatsApp</button>
+                        <small class="nota">O horário fica reservado e a loja confirma pela conversa.</small>
+                    </aside>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ═════════════════════════ LOJAS + RODAPÉ ═════════════════════════ -->
+    <section class="secao lojas">
+        <div class="container">
+            <h2 class="titulo-secao">Nossas lojas</h2>
+            <div class="lojas-grid" id="lojas-grid"></div>
+        </div>
+    </section>
+
+    <footer class="rodape">
+        <div class="container rodape-inner">
+            <div class="rodape-marca">
+                <img src="assets/logo.png" alt="Pet Life" width="64" height="64">
+                <div><strong>Pet Life Canoas</strong><small>Agropecuária & Pet Shop</small></div>
+            </div>
+            <div class="rodape-links">
+                <a id="rod-insta" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> @petlifecanoas</a>
+                <a id="rod-whats" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> <span id="rod-fone"></span></a>
+                <a href="admin.html"><i class="fa-solid fa-lock"></i> Área da loja</a>
+            </div>
+        </div>
+        <div class="credito">
+            <a id="credito-tf" href="#" target="_blank" rel="noopener">Site desenvolvido por <strong>TF Solutions</strong></a>
+        </div>
+    </footer>
+
+    <a class="whats-flutuante" id="whats-flutuante" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+    <!-- Barra fixa da sacolinha no celular -->
+    <button class="barra-sacola" id="barra-sacola" type="button" hidden>
+        <span><i class="fa-solid fa-bag-shopping"></i> <span id="barra-qtd">0 itens</span></span>
+        <strong>Ver sacolinha · <span id="barra-total">R$ 0,00</span></strong>
+    </button>
+
+    <!-- Modal do produto -->
+    <div class="modal" id="modal-produto" hidden>
+        <div class="modal-fundo" data-fechar></div>
+        <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="mp-nome">
+            <button class="fechar" data-fechar aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+            <div id="mp-conteudo"></div>
+        </div>
+    </div>
+
+    <!-- Sacolinha -->
+    <div class="gaveta" id="gaveta" hidden>
+        <div class="modal-fundo" data-fechar-sacola></div>
+        <aside class="gaveta-caixa" role="dialog" aria-modal="true" aria-label="Sacolinha">
+            <div class="gaveta-topo">
+                <h2><i class="fa-solid fa-bag-shopping"></i> Sua sacolinha</h2>
+                <button class="fechar" data-fechar-sacola aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="gaveta-corpo" id="sacola-corpo"></div>
+        </aside>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="dados.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

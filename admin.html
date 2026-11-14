@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#135A61" />
+    <title>Painel da loja · Pet Life</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="admin.css" />
+</head>
+
+<body>
+    <!-- LOGIN -->
+    <section class="login" id="tela-login">
+        <form class="login-caixa" id="form-login">
+            <img src="assets/logo.png" alt="Pet Life" width="110" height="110">
+            <h1>Painel da loja</h1>
+            <p>Pet Life · Agropecuária & Pet Shop</p>
+            <label class="campo">Senha<input type="password" id="senha" autocomplete="current-password" required placeholder="Digite a senha"></label>
+            <p class="erro" id="erro-login" hidden>Senha incorreta.</p>
+            <button class="btn btn-teal btn-bloco" type="submit"><i class="fa-solid fa-right-to-bracket"></i> Entrar</button>
+            <small class="dica-demo">Demonstração · senha: <b>petlife123</b></small>
+            <a class="assinatura" href="https://www.tfsolutions.com.br" target="_blank" rel="noopener">Sistema desenvolvido por <b>TF Solutions</b></a>
+        </form>
+    </section>
+
+    <!-- PAINEL -->
+    <div class="app" id="app" hidden>
+        <aside class="lateral">
+            <div class="lateral-marca">
+                <img src="assets/logo.png" alt="" width="44" height="44">
+                <div><strong>Pet Life</strong><small>Painel da loja</small></div>
+            </div>
+            <nav class="menu" id="menu">
+                <button data-tela="inicio" class="ativo"><i class="fa-solid fa-chart-simple"></i><span>Início</span></button>
+                <button data-tela="agenda"><i class="fa-solid fa-calendar-days"></i><span>Agenda</span><b class="contador" id="cont-pendentes" hidden>0</b></button>
+                <button data-tela="estoque"><i class="fa-solid fa-boxes-stacked"></i><span>Estoque</span><b class="contador alerta" id="cont-baixo" hidden>0</b></button>
+                <button data-tela="servicos"><i class="fa-solid fa-scissors"></i><span>Serviços</span></button>
+                <button data-tela="config"><i class="fa-solid fa-gear"></i><span>Ajustes</span></button>
+            </nav>
+            <div class="lateral-rodape">
+                <a href="index.html" target="_blank" rel="noopener"><i class="fa-solid fa-store"></i> Ver a loja</a>
+                <button id="sair"><i class="fa-solid fa-right-from-bracket"></i> Sair</button>
+            </div>
+        </aside>
+
+        <main class="conteudo">
+            <header class="topo">
+                <div>
+                    <h1 id="titulo-tela">Início</h1>
+                    <p id="sub-tela"></p>
+                </div>
+                <div class="topo-acoes" id="topo-acoes"></div>
+            </header>
+
+            <!-- INÍCIO -->
+            <section class="tela" id="tela-inicio">
+                <div class="kpis" id="kpis"></div>
+                <div class="grade-2">
+                    <div class="painel"><h2>Banho e tosa · últimos 30 dias</h2><p class="painel-sub">Atendimentos por dia</p><div class="grafico" id="graf-banhos"></div></div>
+                    <div class="painel"><h2>Pedidos pelo site · últimos 30 dias</h2><p class="painel-sub">Pedidos finalizados no WhatsApp por dia</p><div class="grafico" id="graf-pedidos"></div></div>
+                    <div class="painel"><h2>Serviços mais pedidos · este mês</h2><div class="barras-h" id="graf-servicos"></div></div>
+                    <div class="painel"><h2>Produtos mais pedidos no site · 30 dias</h2><div class="barras-h" id="graf-produtos"></div></div>
+                    <div class="painel"><h2><i class="fa-solid fa-calendar-day"></i> Agenda de hoje</h2><div id="lista-hoje"></div></div>
+                    <div class="painel"><h2><i class="fa-solid fa-triangle-exclamation"></i> Repor estoque</h2><div id="lista-baixo"></div></div>
+                </div>
+            </section>
+
+            <!-- AGENDA -->
+            <section class="tela" id="tela-agenda" hidden>
+                <div class="agenda-barra">
+                    <div class="mes-nav">
+                        <button class="btn-ico" id="mes-ant" aria-label="Mês anterior"><i class="fa-solid fa-chevron-left"></i></button>
+                        <strong id="mes-titulo"></strong>
+                        <button class="btn-ico" id="mes-prox" aria-label="Próximo mês"><i class="fa-solid fa-chevron-right"></i></button>
+                        <button class="btn btn-claro btn-sm" id="mes-hoje">Hoje</button>
+                    </div>
+                    <div class="filtro-lojas" id="filtro-lojas"></div>
+                </div>
+                <div class="agenda-layout">
+                    <div class="painel calendario-painel">
+                        <div class="cal-semana"><span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span></div>
+                        <div class="calendario" id="calendario"></div>
+                        <div class="legenda" id="legenda"></div>
+                    </div>
+                    <div class="painel dia-painel" id="dia-painel"></div>
+                </div>
+            </section>
+
+            <!-- ESTOQUE -->
+            <section class="tela" id="tela-estoque" hidden>
+                <div class="kpis kpis-4" id="kpis-estoque"></div>
+                <div class="painel">
+                    <div class="filtros">
+                        <label class="busca-adm"><i class="fa-solid fa-magnifying-glass"></i><input id="est-busca" type="search" placeholder="Buscar produto"></label>
+                        <select id="est-cat"></select>
+                        <select id="est-filtro">
+                            <option value="">Todos</option>
+                            <option value="baixo">Estoque baixo</option>
+                            <option value="zerado">Esgotados</option>
+                            <option value="oculto">Ocultos na loja</option>
+                        </select>
+                    </div>
+                    <div class="lista-estoque" id="lista-estoque"></div>
+                </div>
+            </section>
+
+            <!-- SERVIÇOS -->
+            <section class="tela" id="tela-servicos" hidden>
+                <div class="painel">
+                    <h2>Preços por porte</h2>
+                    <p class="painel-sub">O valor aparece para o cliente na hora de agendar. Desmarque para esconder um serviço.</p>
+                    <div class="tabela-rolagem"><table class="tabela" id="tab-servicos"></table></div>
+                </div>
+                <div class="painel">
+                    <h2>Adicionais</h2>
+                    <div id="lista-adicionais"></div>
+                    <button class="btn btn-claro btn-sm" id="add-adicional"><i class="fa-solid fa-plus"></i> Novo adicional</button>
+                </div>
+                <div class="salvar-fixo"><button class="btn btn-teal" id="salvar-servicos"><i class="fa-solid fa-floppy-disk"></i> Salvar serviços</button></div>
+            </section>
+
+            <!-- CONFIGURAÇÕES -->
+            <section class="tela" id="tela-config" hidden>
+                <form id="form-config" class="grade-2"></form>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal genérico -->
+    <div class="modal" id="modal" hidden>
+        <div class="modal-fundo" data-fechar></div>
+        <div class="modal-caixa" role="dialog" aria-modal="true">
+            <button class="fechar" data-fechar aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+            <div id="modal-conteudo"></div>
+        </div>
+    </div>
+    <div class="dica-grafico" id="dica" hidden></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="dados.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>
